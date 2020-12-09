@@ -1,0 +1,10 @@
+<h2>Page heading</h2>
+{{#each movies}}
+<ul>
+    <li><a href="/movies/{{_id}}">{{this.name}}</a></li>
+</ul>
+<a href="/movies/{{this._id}}/delete">Delete</a>
+<a href="/movies/{{this._id}}/update">Update</a>
+{{/each}}
+
+<a href="/movies/new">Add a new movie</a>
