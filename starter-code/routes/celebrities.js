@@ -5,8 +5,7 @@ const CelebrityModel = require("../models/Celebrity");
 //ITERATION 2 LISTING OUR CELEBRITIES
 router.get("/", async (req, res, next) => {
   try {
-    const celebrities = await CelebrityModel.find();
-    console.log(celebrities);
+    await CelebrityModel.find();
     res.render("celebrities/index", { celebrities });
   } catch (err) {
     next(err);
@@ -20,7 +19,7 @@ router.get("/new", (req, res) => {
 
 router.post("/new", async function (req, res, next) {
   try {
-    const newCeleb = await CelebrityModel.create(req.body);
+    await CelebrityModel.create(req.body);
     res.redirect("/celebrities");
   } catch (err) {
     next(err);
